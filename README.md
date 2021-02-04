@@ -6,3 +6,11 @@ Installation/Deployement Guide.
 Install intellij(preferred) or eclipes
 I will use intellij in the discription of this project
 Click on open project
+
+This application requers Mysql Data base to work, install Xampp or wampp server application or Mysql serve of you choice and import the database sql script
+Go to 
+src -> resources in src and pick you db and import to mysql db make sure your db name is spring-boot-bill-payment
+
+Edit the application.properties file located at src -> resource 
+Edit the database name in case you name you db differently from the instruction.
+
