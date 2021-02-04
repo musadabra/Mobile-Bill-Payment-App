@@ -76,3 +76,13 @@ KEY `transaction_fk` (`transaction_id`) USING BTREE,
 	PRIMARY KEY (`id`)
 );
 
+/* Offers table */
+CREATE TABLE `offers` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`vendor_id` INT(11) NOT NULL,
+	`title` VARCHAR(1000),
+	`description` VARCHAR(10000),
+	KEY `vendor_fk` (`vendor_id`) USING BTREE,
+	PRIMARY KEY (`id`)
+);
+
