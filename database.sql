@@ -86,3 +86,15 @@ CREATE TABLE `offers` (
 	PRIMARY KEY (`id`)
 );
 
+/* Populating db table */
+INSERT INTO `roles` (`name`) VALUES ('USER');
+INSERT INTO `roles` (`name`) VALUES ('VENDOR');
+INSERT INTO `roles` (`name`) VALUES ('ADMIN');
+
+/* ADD user details to User table*/
+INSERT INTO `users` (`username`, `email`, `password`, `enabled`,`mobile`) VALUES ('musa', 'musadabra@gmail.com', '$2a$10$cTUErxQqYVyU2qmQGIktpup5chLEdhD2zpzNEyYqmxrHHJbSNDOG.', '1', '07062551772');
+INSERT INTO `users` (`username`, `email`, `password`, `enabled`,`mobile`) VALUES ('laykan', 'musadabra20@gmail.com', '$2a$10$.tP2OH3dEG0zms7vek4ated5AiQ.EGkncii0OpCcGq4bckS9NOULu', '1', '07052551779');
+INSERT INTO `users` (`username`, `email`, `password`, `enabled`,`mobile`) VALUES ('hassan', 'musadabra21@gmail.com', '$2a$10$E2UPv7arXmp3q0LzVzCBNeb4B4AtbTAGjkefVDnSztOwE7Gix6kea', '1','');
+INSERT INTO `users` (`username`, `email`, `password`, `enabled`,`mobile`) VALUES ('dabra', 'musadabra22@gmail.com', '$2a$10$GQT8bfLMaLYwlyUysnGwDu6HMB5G.tin5MKT/uduv2Nez0.DmhnOq', '1','');
+INSERT INTO `users` (`username`, `email`, `password`, `enabled`,`mobile`) VALUES ('admin', 'musadabra23@gmail.com', '$2a$10$IqTJTjn39IU5.7sSCDQxzu3xug6z/LPU6IF0azE/8CkHCwYEnwBX.', '1','');
+
