@@ -49,3 +49,11 @@ CREATE TABLE `complain` (
 	PRIMARY KEY (`id`)
 );
 
+/* Complain_on linking transactions and complains*/
+CREATE TABLE `complain_on` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`transaction_id` INT(11) NOT NULL,
+	KEY `transactoin_id_fk` (`transaction_id`) USING BTREE,
+	PRIMARY KEY (`id`)
+);
+
