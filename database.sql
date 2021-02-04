@@ -23,3 +23,14 @@ CREATE TABLE `users_roles` (
   CONSTRAINT `role_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`),
   CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 );
+
+CREATE TABLE `transactions` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`amount` DOUBLE unsigned,
+	`date` DATE,
+	`time` TIME,
+	`status` VARCHAR(30) DEFAULT NULL,
+	`user_id` INT(11),
+	PRIMARY KEY (`id`),
+	CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+);
