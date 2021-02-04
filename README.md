@@ -20,17 +20,6 @@ WARNING ON RUN OF THE PROGRAM
 
 LOGIN DETAILS
 Passwords are thesame as user
-(`username`, `email`, `password`, `enabled`,`mobile`) 
-VALUES
-
-Customers
-('musa', 'musadabra@gmail.com', 'musa', '1', '07062551772')
-('laykan', 'musadabra20@gmail.com', 'aykan', '1', '07052551779')
-
-VENDOR USER
-('hassan', 'musadabra21@gmail.com', 'hassan', '1','')
-('dabra', 'musadabra22@gmail.com', 'dabra', '1','')
-
 ADMIN USER
 ('admin', 'musadabra23@gmail.com', 'admin', '1','') 
 

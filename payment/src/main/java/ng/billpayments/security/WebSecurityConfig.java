@@ -38,11 +38,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(authenticationProvider());
     }
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //USING EXPRESSION BELOW WE GIVE AUTHORIZAITON TO THE GIVEN USER ROLES
+        //ANY URL MATCH GIVE A PARTICULAR USER GROUP AUTHORIZATION
         http.authorizeRequests()
-                .antMatchers("/").hasAnyAuthority("USER", "CREATOR", "EDITOR", "ADMIN")
-                .antMatchers("/new").hasAnyAuthority("ADMIN", "CREATOR")
+                .antMatchers("/").hasAnyAuthority("USER", "VENDOR", "ADMIN")
+                .antMatchers("/new").hasAnyAuthority("ADMIN", "VENDOR")
+                .antMatchers("/create/**").hasAnyAuthority("ADMIN", "VENDOR")
                 .antMatchers("/edit/**").hasAnyAuthority("ADMIN", "EDITOR")
                 .antMatchers("/delete/**").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
