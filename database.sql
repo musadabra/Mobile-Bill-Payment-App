@@ -57,3 +57,12 @@ CREATE TABLE `complain_on` (
 	PRIMARY KEY (`id`)
 );
 
+/* Vendor table */
+CREATE TABLE `vendor` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(100),
+	`email` VARCHAR(100),
+	`category` VARCHAR(100),
+	PRIMARY KEY (`id`)
+);
+
