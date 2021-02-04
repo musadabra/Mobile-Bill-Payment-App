@@ -14,3 +14,7 @@ src -> resources in src and pick you db and import to mysql db make sure your db
 Edit the application.properties file located at src -> resource 
 Edit the database name in case you name you db differently from the instruction.
 
+WARNING ON RUN OF THE PROGRAM
+ *Ensure that Mysql db is running on port 3306
+ *Ensure that port 8081 is not in us
+
