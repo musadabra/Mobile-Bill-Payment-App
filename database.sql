@@ -66,3 +66,13 @@ CREATE TABLE `vendor` (
 	PRIMARY KEY (`id`)
 );
 
+/* Transaction_of Linking transaction with vendor*/
+CREATE TABLE `transaction_of` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`vendor_id` INT(11) NOT NULL,
+	`transaction_id` INT(11) NOT NULL,
+	KEY `vendor_fk` (`vendor_id`) USING BTREE,
+KEY `transaction_fk` (`transaction_id`) USING BTREE,
+	PRIMARY KEY (`id`)
+);
+
