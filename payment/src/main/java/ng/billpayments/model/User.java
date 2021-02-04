@@ -31,5 +31,21 @@ public class User {
         return id;
     }
 
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
     // remaining getters and setters are not shown for brevity
 }
