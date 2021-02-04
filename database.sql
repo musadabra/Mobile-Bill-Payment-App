@@ -24,13 +24,28 @@ CREATE TABLE `users_roles` (
   CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 );
 
+/* Transactions table */
 CREATE TABLE `transactions` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`amount` DOUBLE unsigned,
 	`date` DATE,
 	`time` TIME,
 	`status` VARCHAR(30) DEFAULT NULL,
-	`user_id` INT(11),
-	PRIMARY KEY (`id`),
-	CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+	`user_id` INT(11) DEFAULT NULL,
+	KEY `user_fk` (`user_id`) USING BTREE,
+	PRIMARY KEY (`id`)
 );
+
+/* user complain */
+CREATE TABLE `complain` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`date` DATE,
+	`time` TIME,
+	`status` VARCHAR(30) DEFAULT NULL,
+	`user_id` INT(11) DEFAULT NULL,
+	`title` VARCHAR(200),
+	`description` VARCHAR(10000),
+	KEY `user_fk` (`user_id`) USING BTREE,
+	PRIMARY KEY (`id`)
+);
+
