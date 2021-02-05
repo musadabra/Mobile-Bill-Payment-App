@@ -30,7 +30,6 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
-        System.out.println(authentication.getAuthorities());
         handle(request, response, authentication);
         clearAuthenticationAttributes(request);
     }
@@ -52,16 +51,16 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
         Map<String, String> roleTargetUrlMap = new HashMap<>();
         roleTargetUrlMap.put("USER", "/customer/index");
         roleTargetUrlMap.put("ADMIN", "/admin/vendor");
-//        return "/admin/vendor.html";
-        final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        for (final GrantedAuthority grantedAuthority : authorities) {
-            System.out.println(grantedAuthority.getAuthority());
-            String authorityName = grantedAuthority.getAuthority();
+        return "/admin/vendor";
+//        final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+//        for (final GrantedAuthority grantedAuthority : authorities) {
+//            System.out.println(grantedAuthority.getAuthority());
+//            String authorityName = grantedAuthority.getAuthority();
 //            if(roleTargetUrlMap.containsKey(authorityName)) {
 //                return roleTargetUrlMap.get(authorityName);
 //            }
-        }
-        return "/admin/vendor";
+//        }
+////        return "/admin/vendor";
 //        throw new IllegalStateException();
     }
 
