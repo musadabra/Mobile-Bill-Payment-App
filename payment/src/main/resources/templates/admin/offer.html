@@ -1,10 +1,18 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
   <head>
     <!-- Required meta tags -->
+
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/">
     <title>INTERVIEW PREPARATION</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
@@ -88,47 +96,7 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile" style="padding-bottom: 60px;">
-              
-            </li>
-            <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
-              <a class="nav-link" href="vendor.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Vendors</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Offer.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Offer</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="complain.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Complain</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Mobile Numbers</span>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <button>Logout</button> 
-              </a>
-            </li>
-           
-          </ul>
-        </nav>
-
-
+        <div th:replace="admin/dashboard.html :: navbar"></div>
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">

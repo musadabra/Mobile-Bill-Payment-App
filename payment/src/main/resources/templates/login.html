@@ -31,14 +31,14 @@
           <div class="row w-100">
             <div class="col-lg-4 mx-auto">
               <div class="auto-form-wrapper">
-                <form th:action="@{/login}">
+                <form th:action="@{/login}" th:method="post">
                   <div class="form-group ${error != null ? 'has-error' : ''}">
-                    <span th:if="${param.error}" class="alert alert-error">
+                    <p th:if="${param.error}" class="alert alert-error" style="margin-left:-20px;color:red;">
                       Invalid Username or password.
-                    </span>
-                    <span th:if="${param.logout}" class="alert alert-success">
+                    </p>
+                    <p  th:if="${param.logout}" class="alert alert-success">
                       You have been logged out.
-                    </span>
+                    </p>
                     <label class="label">Username</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="username" placeholder="Username">

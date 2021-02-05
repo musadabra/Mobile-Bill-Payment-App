@@ -1,4 +1,30 @@
-<div th:replace="layout :: header">...</div>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <base href="/">
+  <title>INTERVIEW PREPARATION</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+  <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/css/shared/style.css">
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="/assets/css/demo_1/style.css">
+  <!-- End Layout styles -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+</head>
+<body>
+<body>
     <div class="container-scroller">
 
       <!-- HEADER -->
@@ -61,26 +87,26 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav th:fragment="navbar" class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile" style="padding-bottom: 60px;">
-              
+
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="vendor.html">
+              <a class="nav-link" href="admin/vendor">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Vendors</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Offer.html">
+              <a class="nav-link" href="admin/offer">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Offer</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="complain.html">
+              <a class="nav-link" href="admin/complain">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Complain</span>
               </a>
@@ -91,13 +117,13 @@
                 <span class="menu-title">Mobile Numbers</span>
               </a>
             </li>
-            
+
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <button>Logout</button> 
+              <a class="nav-link" href="/logout">
+                <button>Logout</button>
               </a>
             </li>
-           
+
           </ul>
         </nav>
 
@@ -123,37 +149,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-md-12">
-                <div class="page-header-toolbar">
-                  <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-left"></i></button>
-                    <button type="button" class="btn btn-secondary">03/02/2019 - 20/08/2019</button>
-                    <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-right"></i></button>
-                  </div>
-                  <div class="filter-wrapper">
-                    <div class="dropdown toolbar-item">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownsorting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Day</button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownsorting">
-                        <a class="dropdown-item" href="#">Last Day</a>
-                        <a class="dropdown-item" href="#">Last Month</a>
-                        <a class="dropdown-item" href="#">Last Year</a>
-                      </div>
-                    </div>
-                    <a href="#" class="advanced-link toolbar-item">Advanced Options</a>
-                  </div>
-                  <div class="sort-wrapper">
-                    <button type="button" class="btn btn-primary toolbar-item">New</button>
-                    <div class="dropdown ml-lg-auto ml-3 toolbar-item">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownexport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownexport">
-                        <a class="dropdown-item" href="#">Export as PDF</a>
-                        <a class="dropdown-item" href="#">Export as DOCX</a>
-                        <a class="dropdown-item" href="#">Export as CDR</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+
             </div>
             <!-- Page Title Header Ends-->
             <div class="row">
@@ -227,9 +223,9 @@
                         <form class="forms-sample">
 
                           <div class="form-group row">
-                            <label for="exampleInputname2" name="vendorname" class="col-sm-3 col-form-label">Company</label>
+                            <label for="exampleInputcompany" name="vendorname" class="col-sm-3 col-form-label">Company</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" id="exampleInputname" placeholder="Vendor Name">
+                              <input type="text" class="form-control" id="exampleInputcompany" placeholder="Vendor Name">
                             </div>
                           </div>
 
