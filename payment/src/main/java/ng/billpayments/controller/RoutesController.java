@@ -21,7 +21,6 @@ public class RoutesController {
     }
 
 
-
     //URL MAPPING FOR CUSTOM LOGIN PAGE AND LOGOUT
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register() {

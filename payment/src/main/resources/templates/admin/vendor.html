@@ -5,6 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <base href="/">
     <title>INTERVIEW PREPARATION</title>
     <!-- plugins:css -->
@@ -182,21 +184,22 @@
                   <div class="col-12 stretch-card">
                     <div class="card">
                       <div class="card-body">
+                        <p th:text="${message}"/>
                         <h4 class="card-title">Create Vendor</h4>
                         <p class="card-description"> Add a Mobile connection company to vendor list </p>
-                        <form class="forms-sample">
+                        <form class="forms-sample" th:action="@{/admin/createvendor}" method="post">
 
                           <div class="form-group row">
-                            <label for="exampleInputname2" name="vendorname" class="col-sm-3 col-form-label">Company</label>
+                            <label for="exampleInputCompany"  class="col-sm-3 col-form-label">Company</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" id="exampleInputname" placeholder="Vendor Name">
+                              <input type="text" name="company" class="form-control" id="exampleInputCompany" placeholder="Company">
                             </div>
                           </div>
 
                           <div class="form-group row">
-                            <label for="exampleInputEmail2" name="email" class="col-sm-3 col-form-label">Email</label>
+                            <label for="exampleInputEmail"  class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                              <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
                             </div>
                           </div>
 
@@ -210,7 +213,7 @@
 
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body">
+                  <div class="card-body" th:if="${not #lists.isEmpty(vendors)}">
                     <h4 class="card-title">Vendors</h4>
                     <p class="card-description"> List of all available vendors <code>Total: 30</code> </p>
                     <table class="table">
@@ -222,28 +225,13 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>53275531</td>
+                        <tr th:each="vendor : ${vendors}">
+                          <tr th:text="${vendor}"></tr>
+                          <tr th:text="${vendor}"></tr>
                           <td>
                             <label class="badge badge-danger">Pending</label>
                           </td>
                         </tr>
-                        <tr>
-                          <td>Messsy</td>
-                          <td>53275532</td>
-                          <td>
-                            <label class="badge badge-warning">In progress</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>John</td>
-                          <td>53275533</td>
-                          <td>
-                            <label class="badge badge-info">Fixed</label>
-                          </td>
-                        </tr>
-                        
                       </tbody>
                     </table>
                   </div>

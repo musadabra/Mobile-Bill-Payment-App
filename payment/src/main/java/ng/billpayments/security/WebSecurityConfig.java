@@ -59,6 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //USING EXPRESSION BELOW WE GIVE AUTHORIZAITON TO THE GIVEN USER ROLES
         //ANY URL MATCH GIVE A PARTICULAR USER GROUP AUTHORIZATION
         http.authorizeRequests()
+                .antMatchers("/customer/registration").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/assets/**").permitAll()
                 .antMatchers("/").hasAnyAuthority("USER", "VENDOR", "ADMIN")
